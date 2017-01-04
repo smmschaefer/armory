@@ -1,0 +1,75 @@
+@-webkit-keyframes btnFade {
+    0%   { background: white; color: red; border: 1px solid black; transform: scale(1.0); }
+	50%  { background: white; color: red; border: 1px solid gray; transform: scale(1.1); } 
+    100% { background: red; color: white; border: 1px solid white; transform: scale(1.0); } 
+}
+
+@keyframes btnFade {
+    0%   { background: white; color: red; border: 1px solid black; transform: scale(1.0); }
+	50%  { background: red; color: white; border: 1px solid gray; transform: scale(1.1); } 
+    100% { background: red; color: white; border: 1px solid white; transform: scale(1.0); } 
+}
+
+.productButton {
+	@include border-radiusPick(10px);
+	
+	border: 1px solid black;
+	background: white;
+	color: black;
+	overflow: hidden;
+	
+	&:hover {
+	    -webkit-animation: btnFade .35s ease-in-out forwards;
+	    animation: btnFade .35s ease-in-out forwards;
+	};
+}
+
+#enterBtn {
+	@include border-radiusPick(5px);
+	
+	margin-top: 30%;
+	height: 5%;
+	width: 10%;
+	border: 2px solid red;
+	background: white;
+	color: red;
+	overflow: hidden;
+	
+	&:hover {
+	    -webkit-animation: btnFade .35s ease-in-out forwards;
+	    animation: btnFade .35s ease-in-out forwards;
+	};
+}
+
+#enter {
+	@include border-radiusPick(5px);
+	
+	margin-top: 25%;
+	border: 2px solid red;
+	background: white;
+	color: red;
+	overflow: hidden;
+	
+	
+	&:hover {
+	    -webkit-animation: btnFade .35s ease-in-out forwards;
+	    animation: btnFade .35s ease-in-out forwards;
+	};
+}
+
+@media (max-width: 800px) {
+	#enter {
+		@include border-radiusPick(5px);
+	
+		margin-top: 30%;
+		border: 2px solid red;
+		background: white;
+		color: red;
+		overflow: hidden;
+	
+		&:hover {
+		    -webkit-animation: btnFade .35s ease-in-out forwards;
+		    animation: btnFade .35s ease-in-out forwards;
+		};
+	}
+}
