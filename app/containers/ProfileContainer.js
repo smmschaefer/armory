@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import sass from '../scss/application.scss';
 
 
 const tstProfileData = [
 	{
+		image: '/public/../../../img/avatarMale02.png',
 		name: 'Sam', 
 		email: 'smmschaefer@gmail.com',
 		flavor: 'A very nice person',
@@ -13,6 +15,7 @@ const tstProfileData = [
 	},
 	
 	{
+		image: '/public/../../../img/avatarFemale01.png',
 		name: 'Ash', 
 		email: 'ash@gmail.com',
 		flavor: 'Direct person',
@@ -23,6 +26,7 @@ const tstProfileData = [
 	},
 	
 	{
+		image: '/public/../../../img/avatarMale01.png',
 		name: 'John', 
 		email: 'john@gmail.com',
 		flavor: 'Hello all',
@@ -48,29 +52,13 @@ class ProfileContainerRender extends Component {
 						</p>
 			)
 		});
-		
-		const renderUser = this.props.data.map( (obj, idx) => {
-		            return ( 
-							this.props.name === obj.name ? 
-		                        <p key={idx}>
-		                                Name: {obj.name} < br/>
-		                                Email: {obj.email} <br />
-		                                Flavor: {obj.flavor} <br />
-		                                STR: {obj.str} <br />
-		                                AGI: {obj.agi} <br />
-		                                INT: {obj.int} <br />
-		                                STA: {obj.sta} <br />
-		                            </p>
-			                     :
-								<p key={idx}> </p>                   
-		            )
-		        });
 				
-		const rUser = this.props.data.filter(obj => {
+		const renderUser = this.props.data.filter(obj => {
      	   return this.props.name === obj.name;
   	  			}).map((obj, idx) => {
     					return (
     			<p key={idx}>
+						<img src={`${obj.image}`} className="avatar"></img>< br/>
                         Name: {obj.name} < br/>
                         Email: {obj.email} <br />
                         Flavor: {obj.flavor} <br />
@@ -82,30 +70,9 @@ class ProfileContainerRender extends Component {
         );
     });
 				
-		const renOneUser = this.props.data.map(( obj, idx ) => {
-			let userData;
-					this.props.name === obj.name ? 
-                     userData =  <p key={idx}>
-                                Name: {obj.name} < br/>
-                                Email: {obj.email} <br />
-                                Flavor: {obj.flavor} <br />
-                                STR: {obj.str} <br />
-                                AGI: {obj.agi} <br />
-                                INT: {obj.int} <br />
-                                STA: {obj.sta} <br />
-                            </p>
-	                     :
-						<p key={idx}> </p>       
-			return (
-				<div>
-					{userData}
-				</div>
-			)        
-		});
-				
 		return (
 			<div>
-				{rUser}
+				{renderUser}
 			</div>
 		)
 	}

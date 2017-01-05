@@ -8,7 +8,6 @@ class Profile extends Component {
 	render() {
 		return (
 			<div className="cols2">
-				<div>[IMG]</div>
 				<div>
 					<ProfileContainer name={this.props.name}/>
 				</div>

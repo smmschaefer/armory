@@ -7,7 +7,7 @@ class Footer extends Component {
 	render() {
 		return (
 			<div id="lowerBar">
-				<p>Some footer text</p>
+				<p>ROAR -_- Search by username to view their stats</p>
 			</div>
 		)
 	}

@@ -4,7 +4,6 @@ import sass from '../scss/application.scss';
 import { Router, Route, Redirect, IndexRoute, Link, hashHistory } from 'react-router'; 
 
 
-
 class SearchBar extends Component {
 	constructor(props){
 		super(props)
@@ -34,14 +33,19 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit.bind(this)}>
-					<input type="text" placeholder="Enter Name" 
-					name="name" 
-					value={this.state.name} 
-					onChange={this.handleChange.bind(this)} />
-					<button className="btn btn-success" type="submit">Search</button>
-				</form>	
+			<div className="row-fluid">
+				<div className="navDiv">
+					<p>ARMORY</p>
+				</div>
+				<div className="navDiv">
+						<form onSubmit={this.handleSubmit.bind(this)}>
+							<input type="text" placeholder="Enter Name" 
+							name="name" 
+							value={this.state.name} 
+							onChange={this.handleChange.bind(this)} />
+							<button id="enter" type="submit">Search</button>
+						</form>		
+				</div>
 			</div>
 		)
 	}

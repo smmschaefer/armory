@@ -5,6 +5,7 @@ import Profile from './Profile';
 import SearchBar from './SearchBar';
 import Landing from './Landing';
 
+
 class Main extends Component {
 	constructor(props) {
 	     super(props);
@@ -16,6 +17,7 @@ class Main extends Component {
 	   handleProfileChange(profileName) {
 	     this.setState( { profileName });
 		 //replace <Profile /> with  {this.props.children} maybe
+		 //<Profile name={this.state.profileName} />
 	   }
 	
 	render() {

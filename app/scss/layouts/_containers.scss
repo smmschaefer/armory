@@ -13,8 +13,8 @@ div {
 #topBar {
 	height: 80px;
 	width: 100%;
-	background: white;
-	color: red;
+	background: red;
+	color: white;
 	display: inline;
 	
 	p {
@@ -25,18 +25,17 @@ div {
 	
 }
 
-#lowerBar {
-	height: 22px;
-	width: 100%;
-	background: white;
-	color: red;
+.navDiv {
+	display: inline-block;
+	overflow: auto;
 	
 	p {
-		padding-top: 10px;
-		padding-left: 10px;
-		font-size: 12px;
+		color: red;
+		font-size: 1.4em;
+		padding-top: 5px;
+		padding-left: 1em;
+		padding-right: 2em;
 	}
-	
 }
 
 

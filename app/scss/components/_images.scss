@@ -11,62 +11,7 @@ $colorBackG: green;
 $colorBack: black;
 $colorBackImg: '/public/../../../img/';
 
-.flip3D {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite, $colorBackImg + 'sun01.jpeg', $cardRadius); 
-		display: inline-block;
-		float: left;
-}
-
-.flip3DTWO {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 10, $colorBackImg + 'sun02.jpeg', $cardRadius); 
-		display: inline-block;
-		padding-left: 165px;
-}
-
-.flip3DTHREE {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 20, $colorBackImg + 'sun03.jpeg', $cardRadius); 
-		display: inline-block;
-		padding-left: 160px;
-}
-
-.flip3DFOUR {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 10, $colorBackImg + 'sun10.jpeg', $cardRadius); 
-		padding-top: 140px;
-		display: inline-block;
-		//padding-left: 0px;
-}
-
-.flip3DFIVE {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 30, $colorBackImg + 'sun11.jpeg', $cardRadius); 
-		padding-top: 140px;
-		display: inline-block;
-		padding-left: 160px;
-}
-
-.flip3DSIX {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 40, $colorBackImg + 'sun12.jpeg', $cardRadius); 
-		padding-top: 140px;
-		display: inline-block;
-		padding-left: 160px;
-}
-
-.flip3DSEVEN {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 30, $colorBackImg + 'sun20.jpeg', $cardRadius); 
-		padding-top: 140px;
-		display: inline-block;
-		//padding-left: 0px;
-}
-
-.flip3DEIGHT {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 50, $colorBackImg + 'sun21.jpeg', $cardRadius); 
-		padding-top: 140px;
-		display: inline-block;
-		padding-left: 160px;
-}
-
-.flip3DNINE {
-		@include flipCard($cardWidth, $cardHeight, $colorWhite - 60, $colorBackImg + 'sun22.jpeg', $cardRadius); 
-		padding-top: 140px;
-		display: inline-block;
-		padding-left: 160px;
+.avatar {
+	width: 140px;
+	height: 150px;
 }
