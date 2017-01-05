@@ -20,6 +20,8 @@ class SearchBar extends Component {
 	
 	handleSubmit(e) {
 	    e.preventDefault();
+		let viewing = 'false';
+		this.props.viewAllProfiles(viewing);
         console.log("searching for NAME " + this.state.name);
         let profileName = this.state.name;
 		profileName = profileName.toLowerCase().trim();
@@ -29,7 +31,13 @@ class SearchBar extends Component {
         this.props.handleProfileChange(profileName);
 		//<Profile name="profileName"/>
 		//this.context.router.push(`/profiles/${profileName}`);
-		}
+	}
+		
+	viewAll(e) {
+			e.preventDefault();
+			let viewing = 'true';
+			this.props.viewAllProfiles(viewing);
+	}	
 
 	render() {
 		return (
@@ -38,13 +46,16 @@ class SearchBar extends Component {
 					<p>ARMORY</p>
 				</div>
 				<div className="navDiv">
-						<form onSubmit={this.handleSubmit.bind(this)}>
-							<input type="text" placeholder="Enter Name" 
-							name="name" 
-							value={this.state.name} 
-							onChange={this.handleChange.bind(this)} />
-							<button id="enter" type="submit">Search</button>
-						</form>		
+					<form onSubmit={this.handleSubmit.bind(this)}>
+						<input type="text" placeholder="Enter Name" 
+						name="name" 
+						value={this.state.name} 
+						onChange={this.handleChange.bind(this)} />
+						<button className="enter" type="submit">Search</button>
+					</form>		
+				</div>
+				<div>
+					<button className="enter" type="submit" onClick={this.viewAll.bind(this)}>VIEW ALL</button>
 				</div>
 			</div>
 		)
@@ -52,7 +63,10 @@ class SearchBar extends Component {
 }
 
 SearchBar.propTypes = {
-  handleProfileChange: React.PropTypes.func.isRequired,
+	handleProfileChange: PropTypes.func.isRequired,
+	viewAllProfiles: PropTypes.func,
+	name: PropTypes.string
 }
+
 
 export default SearchBar;

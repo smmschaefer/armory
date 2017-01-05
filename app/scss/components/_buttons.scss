@@ -29,7 +29,7 @@
 	};
 }
 
-#enter {
+.enter {
 	@include border-radiusPick(5px);
 	
 	border: 2px solid red;

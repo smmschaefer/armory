@@ -3,6 +3,12 @@ a {
 	text-decoration: none;
 }
 
+.profileText {
+	color: red;
+	font-size: 1em;
+	font-weight: bold;
+}
+
 .barTopNav {
 	@include linkStyle;
 	

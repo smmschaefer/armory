@@ -7,21 +7,21 @@ class Profile extends Component {
 	
 	render() {
 		return (
-			<div className="cols2">
-				<div>
-					<ProfileContainer name={this.props.name}/>
-				</div>
+			<div>
+				<ProfileContainer name={this.props.name} view={this.props.view}/>
 			</div>
 		)
 	}
 }
 
 Profile.PropTypes = {
-	name: PropTypes.string
+	name: PropTypes.string,
+	view: PropTypes.string
 }
 
 Profile.defaultProps = {
-	name: ''
+	name: '',
+	view: 'false'
 }
 
 export default Profile;
