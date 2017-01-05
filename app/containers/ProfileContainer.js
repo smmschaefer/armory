@@ -20,43 +20,103 @@ const tstProfileData = [
 		agi: '80',
 		int: '85',
 		sta: '75'
+	},
+	
+	{
+		name: 'John', 
+		email: 'john@gmail.com',
+		flavor: 'Hello all',
+		str: '70',
+		agi: '75',
+		int: '85',
+		sta: '80'
 	}
 ]
 
 class ProfileContainerRender extends Component {
 	render() {
-		const renderData = this.props.data.map( (objInner, index) => {
+		
+		const renderData = this.props.data.map( (obj, index) => {
    		 	return (<p key={index}>
-						Name: {objInner.name} < br/>
-						Email: {objInner.email} <br />
-						Flavor: {objInner.flavor} <br />
-						STR: {objInner.str} <br />
-						AGI: {objInner.agi} <br />
-						INT: {objInner.int} <br />
-						STA: {objInner.sta} <br />
+						Name: {obj.name} < br/>
+						Email: {obj.email} <br />
+						Flavor: {obj.flavor} <br />
+						STR: {obj.str} <br />
+						AGI: {obj.agi} <br />
+						INT: {obj.int} <br />
+						STA: {obj.sta} <br />
 						</p>
 			)
 		});
+		
+		const renderUser = this.props.data.map( (obj, idx) => {
+		            return ( 
+							this.props.name === obj.name ? 
+		                        <p key={idx}>
+		                                Name: {obj.name} < br/>
+		                                Email: {obj.email} <br />
+		                                Flavor: {obj.flavor} <br />
+		                                STR: {obj.str} <br />
+		                                AGI: {obj.agi} <br />
+		                                INT: {obj.int} <br />
+		                                STA: {obj.sta} <br />
+		                            </p>
+			                     :
+								<p key={idx}> </p>                   
+		            )
+		        });
+				
+		const rUser = this.props.data.filter(obj => {
+     	   return this.props.name === obj.name;
+  	  			}).map((obj, idx) => {
+    					return (
+    			<p key={idx}>
+                        Name: {obj.name} < br/>
+                        Email: {obj.email} <br />
+                        Flavor: {obj.flavor} <br />
+                        STR: {obj.str} <br />
+                        AGI: {obj.agi} <br />
+                        INT: {obj.int} <br />
+                        STA: {obj.sta} <br />
+            </p>
+        );
+    });
+				
+		const renOneUser = this.props.data.map(( obj, idx ) => {
+			let userData;
+					this.props.name === obj.name ? 
+                     userData =  <p key={idx}>
+                                Name: {obj.name} < br/>
+                                Email: {obj.email} <br />
+                                Flavor: {obj.flavor} <br />
+                                STR: {obj.str} <br />
+                                AGI: {obj.agi} <br />
+                                INT: {obj.int} <br />
+                                STA: {obj.sta} <br />
+                            </p>
+	                     :
+						<p key={idx}> </p>       
+			return (
+				<div>
+					{userData}
+				</div>
+			)        
+		});
+				
 		return (
 			<div>
-				{renderData}
+				{rUser}
 			</div>
 		)
 	}
 }
 
 class ProfileContainer extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			data: tstProfileData
-		}
-	}
 	
 	render() {
 		return (
 			<div>
-				<ProfileContainerRender data={this.props.data} />
+				<ProfileContainerRender data={this.props.data} name={this.props.name} />
 			</div>
 		)
 	}
@@ -65,13 +125,14 @@ class ProfileContainer extends Component {
 ProfileContainer.PropTypes = {
 	data: PropTypes.arrayOf(
 		PropTypes.object
-	)
+	),
+	name: PropTypes.string
 }
 
 ProfileContainer.defaultProps = {
-	data: tstProfileData
+	data: tstProfileData,
+	name: ''
 }
-
 
 
 export default ProfileContainer;
