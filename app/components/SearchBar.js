@@ -33,9 +33,9 @@ class SearchBar extends Component {
 	}
 		
 	viewAll(e) {
-			e.preventDefault();
-			let viewing = 'true';
-			this.props.viewAllProfiles(viewing);
+		e.preventDefault();
+		let viewing = 'true';
+		this.props.viewAllProfiles(viewing);
 	}	
 
 	render() {

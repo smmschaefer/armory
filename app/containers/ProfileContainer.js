@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Landing from '../components/Landing';
 import sass from '../scss/application.scss';
 
+
 const imgPath = '/public/../../../img/';
 
 const tstProfileData = [
