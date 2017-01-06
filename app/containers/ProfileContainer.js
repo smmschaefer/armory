@@ -63,6 +63,14 @@ const tstProfileData = [
 ]
 
 class ProfileContainerRender extends Component {
+	
+	 createId(name) {
+	 	let rand = 5;
+	 	const addIdToName = name.concat(rand);
+
+	 	return `${addIdToName}`;
+	 }
+	 
 	render() {
 		
 		let spaceStyle = {
