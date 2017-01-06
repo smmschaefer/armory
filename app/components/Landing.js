@@ -9,7 +9,7 @@ class Landing extends Component {
 			<div>
 				<img src={`${testImg}`} className="avatarLanding"></img>
 				<h3>Welcome to the Armory!</h3>
-				<p>Type a username in above to view that Avatars profile</p>
+				<p>Type in a username above to view that Avatars profile</p>
 			</div>
 		)
 	}

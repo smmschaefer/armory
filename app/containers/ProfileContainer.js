@@ -64,6 +64,10 @@ const tstProfileData = [
 class ProfileContainerRender extends Component {
 	render() {
 		
+		let spaceStyle = {
+			padding: '1em 0px 0px 0px'
+		};
+		
 		const renderData = this.props.data.map( (obj, idx) => {
    		 	return (
 				<div key={idx} className="cols2">
@@ -84,10 +88,6 @@ class ProfileContainerRender extends Component {
 				</div>
 			)
 		});
-		
-		let spaceStyle = {
-			padding: '1em 0px 0px 0px'
-		};
 		
 		const renderUser = this.props.data.filter(obj => {
      	   return this.props.name === obj.name;
@@ -115,14 +115,13 @@ class ProfileContainerRender extends Component {
 		return (
 			<div>
 				{this.props.view === 'true' ? renderData : renderUser }
-				{this.props.name === '' && this.props.view == 'false' && <Landing />}
+				{this.props.name === '' && this.props.view === 'false' && <Landing />}
 			</div>
 		)
 	}
 }
 
 class ProfileContainer extends Component {
-	
 	render() {
 		return (
 			<div>
