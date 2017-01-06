@@ -37,6 +37,7 @@ class Main extends Component {
 				</div>
 				<div className="row">
 					<Profile name={this.state.profileName} view={this.state.view}/>
+					
 				</div>
 				<div className="row">
 					<Footer />

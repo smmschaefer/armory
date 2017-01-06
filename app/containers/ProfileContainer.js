@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import Landing from '../components/Landing';
 import sass from '../scss/application.scss';
 
+const imgPath = '/public/../../../img/';
 
 const tstProfileData = [
 	{
-		image: '/public/../../../img/avatarMale02.png',
+		image: imgPath + 'avatarMale02.png',
 		name: 'Sam', 
 		email: 'smmschaefer@gmail.com',
 		flavor: 'A very nice person',
@@ -15,7 +17,7 @@ const tstProfileData = [
 	},
 	
 	{
-		image: '/public/../../../img/avatarFemale01.png',
+		image: imgPath + 'avatarFemale01.png',
 		name: 'Ash', 
 		email: 'ash@gmail.com',
 		flavor: 'Best person in world',
@@ -26,7 +28,7 @@ const tstProfileData = [
 	},
 	
 	{
-		image: '/public/../../../img/avatarMale01.png',
+		image: imgPath + '/avatarMale01.png',
 		name: 'John', 
 		email: 'john@gmail.com',
 		flavor: 'Hello all',
@@ -37,14 +39,25 @@ const tstProfileData = [
 	},
 	
 	{
-		image: '/public/../../../img/avatarMale03.png',
+ 		image: imgPath + 'avatarMale03.png',
 		name: 'David', 
-		email: 'john@gmail.com',
+		email: 'david@gmail.com',
 		flavor: 'My name is what?',
+		str: '72',
+		agi: '72',
+		int: '80',
+		sta: '85'
+	},
+	
+	{
+		image: imgPath + 'avatarFemale02.png',
+		name: 'Annie', 
+		email: 'annie@gmail.com',
+		flavor: 'HMMMMMMMMM',
 		str: '70',
-		agi: '75',
-		int: '85',
-		sta: '80'
+		agi: '90',
+		int: '30',
+		sta: '90'
 	}
 ]
 
@@ -73,7 +86,7 @@ class ProfileContainerRender extends Component {
 		});
 		
 		let spaceStyle = {
-			padding: '2em 0px 0px 0px'
+			padding: '1em 0px 0px 0px'
 		};
 		
 		const renderUser = this.props.data.filter(obj => {
@@ -98,19 +111,11 @@ class ProfileContainerRender extends Component {
 					</div>
       		);
   	 	 });
-		 
-		 let allOrNo = this.props.view;
-		 let renderMe;
-		 
-		 if(allOrNo === 'true') {
-			 renderMe = renderData;
-		 } else {
-			 renderMe = renderUser;
-		 }
 				
 		return (
 			<div>
-				{renderMe}
+				{this.props.view === 'true' ? renderData : renderUser }
+				{this.props.name === '' && this.props.view == 'false' && <Landing />}
 			</div>
 		)
 	}
@@ -138,7 +143,7 @@ ProfileContainer.PropTypes = {
 ProfileContainer.defaultProps = {
 	data: tstProfileData,
 	name: '',
-	view: ''
+	view: 'false'
 }
 
 

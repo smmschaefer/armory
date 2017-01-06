@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Profile from './Profile';
+import Landing from './Landing';
 import sass from '../scss/application.scss';
 import { Router, Route, Redirect, IndexRoute, Link, hashHistory } from 'react-router'; 
 
@@ -22,12 +23,10 @@ class SearchBar extends Component {
 	    e.preventDefault();
 		let viewing = 'false';
 		this.props.viewAllProfiles(viewing);
-        console.log("searching for NAME " + this.state.name);
         let profileName = this.state.name;
 		profileName = profileName.toLowerCase().trim();
 		//Cap the first letter in the name and add the rest of the name 
 		profileName = profileName.charAt(0).toUpperCase() + profileName.substr(1);
-		console.log("NEW NAME " + profileName);
         this.props.handleProfileChange(profileName);
 		//<Profile name="profileName"/>
 		//this.context.router.push(`/profiles/${profileName}`);

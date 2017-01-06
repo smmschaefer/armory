@@ -10,7 +10,7 @@ class Routes extends Component {
 		return (
 			<Router history={ hashHistory }>
 				<Route path="/" component={Main}>
-				<Route path="/profiles/:search" component={Profile} />
+				<Route path="/Profile/:search" component={Profile} />
 				<Route path="Landing" component={Landing}></Route>
 				<IndexRoute component={Landing}></IndexRoute>
 			</Route>

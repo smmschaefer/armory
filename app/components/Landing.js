@@ -3,12 +3,13 @@ import sass from '../scss/application.scss';
 
 class Landing extends Component {
 	render() {
-		
 		let testImg = "/public/../../../img/avatarMale02.png";
+		
 		return (
 			<div>
-				<img src={`${testImg}`} className="avatar"></img>
-				LANDING PAGE
+				<img src={`${testImg}`} className="avatarLanding"></img>
+				<h3>Welcome to the Armory!</h3>
+				<p>Type a username in above to view that Avatars profile</p>
 			</div>
 		)
 	}
